@@ -1,0 +1,14 @@
+{
+  "extends": [
+      "standard",
+      "eslint-config-prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "browser": true
+  }
+}
