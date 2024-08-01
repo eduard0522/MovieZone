@@ -1,8 +1,9 @@
 import Banner from "./Banner"
 
+
 const MovieSelected  = () => {
   return (
-    <section>
+    <section className="mb-10">
       <Banner/>
     </section>
   )
