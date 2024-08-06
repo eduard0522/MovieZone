@@ -1,10 +1,11 @@
 import Banner from "./Banner"
 
 
-const MovieSelected  = () => {
+const MovieSelected  = ({movie}) => {
+ 
   return (
     <section className="mb-10">
-      <Banner/>
+      <Banner movie={movie}/>
     </section>
   )
 }

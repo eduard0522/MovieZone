@@ -3,13 +3,18 @@ import Home from "../pages/Home.jsx"
 import Series from "../pages/Series.jsx"
 import Movies from "../pages/Movies.jsx"
 
+
+import { VideoProvider } from "../components/Contexts/contextVideo.jsx"
+
 const Router = () => {
   return(
+    <VideoProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/series" element={<Series />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/series" element={<Series />} />
       </Routes>
+      </VideoProvider>
   )
 }
 export default Router
