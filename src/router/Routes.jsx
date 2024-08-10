@@ -14,7 +14,7 @@ const Router = () => {
           <Route path="/movies" element={<Movies />} />
           <Route path="/series" element={<Series />} />
       </Routes>
-      </VideoProvider>
+    </VideoProvider>
   )
 }
 export default Router

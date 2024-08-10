@@ -11,7 +11,7 @@ import avatarPrueba from "../../assets/avatar-prueba.jpg"
 const Nav = () => {
   return (
     <section className="flex justify-between w-full items-center">
-      <div className="flex gap-8 items-center w-3/5 justify-between">
+      <div className="flex gap-8 items-center w-4/5 justify-start">
           <div className="w-48"> <img src={Logo} alt="Logo MovieZone"  /> </div>
             <nav className="flex gap-8 text-blackP-100"> 
               <NavLink to="/" className={({ isActive }) => (isActive ? "text-white" : "text-blackP-100" )} > 

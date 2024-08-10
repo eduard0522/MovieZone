@@ -8,18 +8,20 @@ export const VideoProvider = ({ children }) => {
 
   const[ movieSelected ,  setMovieSelected ] = useState("")
   const [ movieList , setMovieList ] = useState([])
+  const [loadingDates, setLoadingDates] = useState(true)
 
   useEffect(() => {
     setMovieList(moviesDates)
-    console.log(movieList)
+    if(moviesDates.length === 0){
+      setMovieSelected([])
+    }
     setMovieSelected(moviesDates[0])
+    setLoadingDates(false)
   },[]) 
-
-  console.log(movieList)
 
   return (
     <ContextVideo.Provider 
-    value = {{ movieList, movieSelected, setMovieSelected, moviesDates }}>
+       value = {{ movieList, movieSelected, setMovieSelected, moviesDates,loadingDates }}>
       {children}
     </ContextVideo.Provider>
   )

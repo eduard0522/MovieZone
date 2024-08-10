@@ -7,13 +7,14 @@ import { useContext } from "react"
 import { ContextVideo } from "../components/Contexts/contextVideo"
 
 const Home = () => {
-  const {movieSelected, setMovieSelected} = useContext(ContextVideo)
-  console.log("Movie selectes " , movieSelected)
+  const {movieSelected, setMovieSelected , loadingDates} = useContext(ContextVideo)
   return (
     <>
         <section>
               <Nav />
-                <MovieSelected movie={movieSelected} />
+                {
+                  loadingDates ? <div>Loading...</div> :  <MovieSelected movie={movieSelected} />
+                }
                 < MostPopular />
         </section>
         <section>

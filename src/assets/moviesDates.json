@@ -1,7 +1,7 @@
 [
    {
       "title": "Spider-Man: No Way Home",
-      "genre": "Action, Adventure, Sci-Fi",
+      "genre": ["Action", "Adventure","Animation "],
       "rating": 8.7,
       "release_year": 2021,
       "director": "Jon Watts",
@@ -17,7 +17,7 @@
 
     {
       "title": "The Shawshank Redemption",
-      "genre": "Drama",
+      "genre": ["Drama"],
       "rating": 9.2,
       "release_year": 1994,
       "director": "Frank Darabont",
@@ -32,7 +32,7 @@
       },
       {
       "title": "Ferdinand",
-      "genre": "Animation, Adventure, Comedy",
+      "genre": ["Animation ", "Adventure", "Comedy"],
       "rating": 7.5,
       "release_year": 2017,
       "director": "Kirk DeMicco",
@@ -47,7 +47,7 @@
       },
       {
         "title": "Guardianes de la Galaxía  2",
-        "genre": "Action, Adventure, Sci-Fi",
+        "genre":[ "Action", "Adventure", "Sci-Fi"],
         "rating": 8.1,
         "release_year": 2017,
         "director": "James Gunn",
@@ -62,7 +62,7 @@
         },
         {
           "title": "Bolt",
-          "genre": "Animation, Adventure, Comedy",
+          "genre": ["Animation", "Adventure", "Comedy"],
           "rating": 7.1,
           "release_year": 2008,
           "director": "Chris Williams",
@@ -77,7 +77,7 @@
         },
         {
           "title": "Deadpool 2",
-          "genre": "Action, Adventure, Comedy",
+          "genre": ["Action", "Adventure", "Comedy"],
           "rating": 7.6,
           "release_year": 2018,
           "director": "David Leitch",
@@ -92,7 +92,7 @@
         },
         {
           "title" : "Jhon Wick 3",
-          "genre" : "Action, Thriller",
+          "genre" :[ "Action", "Thriller"],
           "rating" : 7.5,
           "release_year" : 2019,
           "director" : "Chad Stahelski",
