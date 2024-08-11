@@ -3,9 +3,11 @@ import Description from "./Descripcion"
 import ButtonPlay from "./ButtonPlay"
 import TagsMovie from "./TagsMovie"
 import ButtonSeeLater from "./ButtonSeeLater"
+import { useContext } from "react"
+import { ContextVideo } from "../Contexts/contextVideo"
 
 const Banner = ({movie}) => {
-
+  const { changeOpenModal } = useContext(ContextVideo)
   return ( 
     <div className=" w-[100%] h-[80vh] bg-cover mx-auto rounded-lg" style={ { backgroundImage : 
         `url("${movie.banner}")`  } }>
@@ -16,7 +18,7 @@ const Banner = ({movie}) => {
           <Description  description = { movie.description}/>
 
           <div className="flex gap-4">
-            <ButtonPlay />
+            <ButtonPlay  changeOpenModal = { changeOpenModal}/>
             <ButtonSeeLater />
           </div>
         

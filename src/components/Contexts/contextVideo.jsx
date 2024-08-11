@@ -9,6 +9,7 @@ export const VideoProvider = ({ children }) => {
   const[ movieSelected ,  setMovieSelected ] = useState("")
   const [ movieList , setMovieList ] = useState([])
   const [loadingDates, setLoadingDates] = useState(true)
+  const [openModalMovie, setOpenModalMovie] = useState(false)
 
   useEffect(() => {
     setMovieList(moviesDates)
@@ -19,9 +20,13 @@ export const VideoProvider = ({ children }) => {
     setLoadingDates(false)
   },[]) 
 
+  const changeOpenModal = () => {
+    setOpenModalMovie(!openModalMovie)
+  }
+
   return (
     <ContextVideo.Provider 
-       value = {{ movieList, movieSelected, setMovieSelected, moviesDates,loadingDates }}>
+       value = {{ movieList, movieSelected, setMovieSelected, moviesDates,loadingDates, changeOpenModal, openModalMovie }}>
       {children}
     </ContextVideo.Provider>
   )

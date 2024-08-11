@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import axios from "axios"
+import { ContextVideo } from "../Contexts/contextVideo"
 
 const VideoPlayer = () => {
 
   const [videoUrl, setVideoUrl] = useState('')
+  const {changeOpenModal, openModalMovie,movieSelected } = useContext(ContextVideo)
 
   useEffect(()  => {
       const getVideo = async () => {
@@ -25,9 +27,9 @@ const VideoPlayer = () => {
 
 
   return (
-    <dialog open={false} >
+    <dialog open={openModalMovie}  
+      className="w-full h-full absolute top-0 left-0 right-0 bottom-0">
        <div>
-        <h1>Video Streaming</h1>
         {videoUrl ? (
           <video controls width="100%">
             <source src={videoUrl} type="video/mp4" />
