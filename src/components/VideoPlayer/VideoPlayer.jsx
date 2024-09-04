@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from "react"
+import { IoMdCloseCircle } from "react-icons/io";
 import axios from "axios"
 import { ContextVideo } from "../Contexts/contextVideo"
 
@@ -21,7 +22,6 @@ const VideoPlayer = () => {
             console.error('Error fetching the video', error)
           }
       } 
-
       getVideo()
       },[])
 
@@ -29,7 +29,11 @@ const VideoPlayer = () => {
   return (
     <dialog open={openModalMovie}  
       className="w-full h-full absolute top-0 left-0 right-0 bottom-0">
-       <div>
+        <button onClick={() => changeOpenModal(false)} 
+           className=" z-10 absolute top-4 right-4 text-2xl text-gray-400 hover:text-gray-200">
+          <IoMdCloseCircle className="text-4xl" />
+        </button>
+        <div>
         {videoUrl ? (
           <video controls width="100%">
             <source src={videoUrl} type="video/mp4" />
