@@ -3,6 +3,9 @@ import { useContext } from "react"
 import { ContextVideo } from "../components/Contexts/contextVideo"
 
 import Movie from "../components/Movie/CardMovie"
+import FilterByGenres from "../components/Sections/FilteredByGenres"
+import Footer from "../components/Footer/Footer"
+
 
 const Movies = () => {
 
@@ -11,17 +14,9 @@ const Movies = () => {
     <>
       <Nav />
       <main>
-         <h1 className=" text-4xl font-bold"> All movies </h1>
-         <div className="flex justify-center flex-wrap mt-8 gap-4">
-            {
-              movieList.map(movie => {
-                return(
-                  <Movie key={movie.codeVideo} movie={movie} />
-                )
-              })
-            }
-         </div>
+          <FilterByGenres />
       </main>
+      <Footer />
     </>
   )
 }

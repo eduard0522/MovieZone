@@ -7,7 +7,7 @@ import Header from '../HeaderSections/Header'
 
 const MostPopular = () => {
   const { movieList, setMovieSelected } = useContext(ContextVideo)
-
+  const ratingRequired = 8
   const handleOnclick = (movie) => {
     setMovieSelected(movie)
   }
@@ -16,16 +16,23 @@ const MostPopular = () => {
       <Header title='Most Popular' />
       <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
         {movieList.map((movie) => {
-          return (
-            <Link
-              onClick={() => {
-                handleOnclick(movie)
-              }}
-            >
-              <Movie movie={movie} />
-            </Link>
-          )
+
+          if(movie.rating >= ratingRequired){
+            return (
+              <Link key={movie.title}
+                onClick={() => {
+                  handleOnclick(movie)
+                }}
+              >
+                <Movie movie={movie}  />
+              </Link>
+            )
+          }
+          else{
+            return null
+          }
         })}
+
       </div>
     </section>
   )

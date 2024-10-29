@@ -12,21 +12,28 @@ const MostRecents = () => {
   const handleOnclick = (movie) => {
     setMovieSelected(movie)
   }
+  
   return (
     <section className='my-4'>
       <Header title= " Most Recents " />
 
       <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
         {movieList.map((movie) => {
-          return (
-            <Link
-              onClick={() => {
-                handleOnclick(movie)
-              }}
-            >
-              <Movie movie={movie} />
-            </Link>
-          )
+
+          if (movie.release_year >= 2018) {
+            return (
+              <Link key={movie.title}
+                onClick={() => {
+                  handleOnclick(movie)
+                }}
+              >
+                <Movie movie={movie} />
+              </Link>
+            )
+          } else {
+            return null
+          }
+          
         })}
       </div>
     </section>
