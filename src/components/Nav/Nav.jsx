@@ -6,6 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 
 import Logo from "../../assets/logo.png"
 import ButtonCategory from "./ButtonCategory"
+import ButtonLogin from "../Buttons/Login";
 import avatarPrueba from "../../assets/avatar-prueba.jpg"
 import { useState } from "react";
 
@@ -34,7 +35,7 @@ const Nav = () => {
               <IoSearch  className=" -translate-x-6"/>
             </div>
       </div>
-      <div className="w-12 rounded-full" > { auth ? <img src={avatarPrueba} alt="Avatar del perfil"  className="rounded-full"/> : <span> Login </span> } </div> 
+      <div className="rounded-full" > { auth ? <img src={avatarPrueba} alt="Avatar del perfil"  className="rounded-full"/> : <ButtonLogin/> } </div> 
       
     </section>
   )
