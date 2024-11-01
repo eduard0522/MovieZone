@@ -5,6 +5,7 @@ import Nav from "../components/Nav/Nav"
 import Footer from "../components/Footer/Footer"
 import bgImage from "../assets/bg_Index.jpg"
 import FormLogin from "../components/Forms/Login"
+import RegisterForm from "../components/Forms/Register"
 
 const Index = () => {
   const {openForm,setOpenForm } = useContext(ContextVideo)
@@ -28,7 +29,7 @@ const Index = () => {
           {
             openForm && <FormLogin />
           }
-         
+         <RegisterForm />
         </div>
 
         
