@@ -12,7 +12,7 @@ const FormLogin = () => {
 
   return (
     <FormContainer>
-      <CloseFormButton />
+      <CloseFormButton name="login" />
       <FormTitle title={'Login'} />
       <form
         onSubmit={handleFormSubmit}

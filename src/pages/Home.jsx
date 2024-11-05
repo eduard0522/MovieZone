@@ -2,16 +2,18 @@ import Nav from "../components/Nav/Nav"
 import MovieSelected from "../components/MovieSelected/MovieSelected"
 import VideoPlayer from "../components/VideoPlayer/VideoPlayer"
 import MostPopular from "../components/Sections/MostPopular"
+import { Navigate } from "react-router-dom"
 
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ContextVideo } from "../components/Contexts/contextVideo"
 import MostRecents from "../components/Sections/MostRecents"
 import Footer from "../components/Footer/Footer"
 
 const Home = () => {
-  const {movieSelected, setMovieSelected , loadingDates} = useContext(ContextVideo)
+  const {movieSelected, loadingDates, isAuthenticated} = useContext(ContextVideo)
   return (
     <>
+        { !isAuthenticated ? <Navigate to="/auth"/> : <Navigate to = "/"/> }
         <section>
               <Nav />
                 {

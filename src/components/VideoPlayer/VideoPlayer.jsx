@@ -11,7 +11,7 @@ const VideoPlayer = () => {
   useEffect(()  => {
       const getVideo = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/videos/video',{
+            const response = await axios.get('http://localhost:3100/videos/video',{
               responseType: 'blob'
             });
             console.log(response)

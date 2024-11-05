@@ -1,3 +1,6 @@
+import { useContext } from "react";
+
+import { ContextVideo } from "../Contexts/contextVideo";
 import FormContainer from "./FormPlugins/FormContainer";
 import FormTitle from "./FormPlugins/FormTitle";
 import InputForm from "./FormPlugins/Input";
@@ -8,7 +11,7 @@ import CloseFormButton from "./FormPlugins/CloseFormButton";
 const RegisterForm = () => {
   return (
     <FormContainer > 
-      <CloseFormButton/>
+      <CloseFormButton name="register"/>
       <form className="w-full flex flex-col gap-y-10 justify-center items-center font-Poppins">
         <FormTitle  title={"Realizar registro"}/>
 
