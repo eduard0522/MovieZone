@@ -8,7 +8,7 @@ import FormLogin from "../components/Forms/Login"
 import RegisterForm from "../components/Forms/Register"
 
 const Index = () => {
-  const {openFormLogin,openFormRegister,setOpenFormRegister } = useContext(ContextVideo)
+  const {openFormLogin,setOpenFormLogin,openFormRegister,setOpenFormRegister } = useContext(ContextVideo)
 
   const handleClickRegister = () => {
     setOpenFormRegister(!openFormRegister)
@@ -29,7 +29,9 @@ const Index = () => {
                 Registrarse
               </button>
             </div>
-            <h4 className="decoration-solid underline text-end font-semibold hover:text-greenP cursor-pointer"> Ya estoy registrado </h4>
+            <h4 className="decoration-solid underline text-end font-semibold hover:text-greenP cursor-pointer"
+            onClick={() => setOpenFormLogin(!openFormLogin)}
+            > Ya estoy registrado </h4>
           </div>
           {
             openFormLogin && <FormLogin />
