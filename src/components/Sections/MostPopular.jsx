@@ -16,19 +16,18 @@ const MostPopular = () => {
       <Header title='Most Popular' />
       <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
         {movieList.map((movie) => {
-
-          if(movie.rating >= ratingRequired){
+          if (movie.rating >= ratingRequired) {
             return (
-              <Link key={movie.title}
+              <Link
+                key={movie.title}
                 onClick={() => {
                   handleOnclick(movie)
                 }}
               >
-                <Movie movie={movie}  />
+                <Movie movie={movie} />
               </Link>
             )
-          }
-          else{
+          } else {
             return null
           }
         })}

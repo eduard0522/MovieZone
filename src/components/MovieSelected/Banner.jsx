@@ -1,27 +1,30 @@
-import Title from "./Title"
-import Description from "./Descripcion"
-import ButtonPlay from "./ButtonPlay"
-import TagsMovie from "./TagsMovie"
-import ButtonSeeLater from "./ButtonSeeLater"
-import { useContext } from "react"
-import { ContextVideo } from "../Contexts/contextVideo"
+import Title from './Title'
+import Description from './Descripcion'
+import ButtonPlay from './ButtonPlay'
+import TagsMovie from './TagsMovie'
+import ButtonSeeLater from './ButtonSeeLater'
+import { useContext } from 'react'
+import { ContextVideo } from '../Contexts/contextVideo'
 
-const Banner = ({movie}) => {
+const Banner = ({ movie }) => {
   const { changeOpenModal } = useContext(ContextVideo)
-  return ( 
-    <div className=" w-[100%] h-[80vh] bg-cover mx-auto rounded-lg" style={ { backgroundImage : 
-        `url("${movie.banner}")`  } }>
-       
-      <div className="w-full h-full bg-gradient-to-tr from-[#000000cd] to-[#00000004] flex flex-col justify-end gap-4 p-8">
-          <Title title = {movie.title}/>
-          <TagsMovie tags={movie.genre}/>
-          <Description  description = { movie.description}/>
+  return (
+    <div
+      className=' w-[100%] h-[80vh] bg-cover mx-auto rounded-lg' style={{
+        backgroundImage:
+        `url("${movie.banner}")`
+      }}
+    >
 
-          <div className="flex gap-4">
-            <ButtonPlay  changeOpenModal = { changeOpenModal}/>
-            <ButtonSeeLater />
-          </div>
-        
+      <div className='w-full h-full bg-gradient-to-tr from-[#000000cd] to-[#00000004] flex flex-col justify-end gap-4 p-8'>
+        <Title title={movie.title} />
+        <TagsMovie tags={movie.genre} />
+        <Description description={movie.description} />
+
+        <div className='flex gap-4'>
+          <ButtonPlay changeOpenModal={changeOpenModal} />
+          <ButtonSeeLater />
+        </div>
 
       </div>
     </div>

@@ -1,33 +1,41 @@
-import { useContext } from "react";
+import { FormProvider, useForm } from 'react-hook-form'
 
-import { ContextVideo } from "../Contexts/contextVideo";
-import FormContainer from "./FormPlugins/FormContainer";
-import FormTitle from "./FormPlugins/FormTitle";
-import InputForm from "./FormPlugins/Input";
-import SubmitButton from "./FormPlugins/SubmitButton";
-import CloseFormButton from "./FormPlugins/CloseFormButton";
-
+import FormContainer from './FormPlugins/FormContainer'
+import FormTitle from './FormPlugins/FormTitle'
+import EmailInput from './FormPlugins/EmailInput'
+import PasswordInput from './FormPlugins/PasswordInput'
+import SubmitButton from './FormPlugins/SubmitButton'
+import CloseFormButton from './FormPlugins/CloseFormButton'
 
 const RegisterForm = () => {
+  const methods = useForm()
+  const onClick = (data) => {
+    console.log(data)
+  }
   return (
-    <FormContainer > 
-      <CloseFormButton name="register"/>
-      <form className="w-full flex flex-col gap-y-10 justify-center items-center font-Poppins">
-        <FormTitle  title={"Realizar registro"}/>
+    <FormProvider {...methods}>
+      <FormContainer>
+        <CloseFormButton name='register' />
+        <form
+          onSubmit={methods.handleSubmit(onClick)}
+          className='w-full flex flex-col gap-y-10 justify-center items-center font-Poppins'
+        >
+          <FormTitle title='Realizar registro' />
 
-        <div className="w-full flex flex-col gap-y-16 h-40">
-          <InputForm inputName={"Nombre"} inputType={"text"} />
-          <InputForm inputName={"Correo"} inputType={"email"}/>
-          <InputForm inputName={"Contraseña"} inputType={"password"}/>
-        </div>
+          <div className='w-full flex flex-col gap-y-16 h-40'>
+            <EmailInput inputName='Nombre' />
+            <EmailInput inputName='Correo' />
+            <PasswordInput inputName='Contraseña' />
+          </div>
 
-        <SubmitButton content={"Registrarme"}/>
+          <SubmitButton content='Registrarme' />
 
-      </form>
+        </form>
 
-      <h3> Ya tengo cuenta, <span className="font-bold underline cursor-pointer hover:text-greenP"> Ingresar. </span> </h3>
+        <h3> Ya tengo cuenta, <span className='font-bold underline cursor-pointer hover:text-greenP'> Ingresar. </span> </h3>
 
-    </FormContainer>
+      </FormContainer>
+    </FormProvider>
   )
 }
 
