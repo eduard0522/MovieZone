@@ -8,11 +8,13 @@ import FormContainer from './FormPlugins/FormContainer'
 import FormTitle from './FormPlugins/FormTitle'
 import SubmitButton from './FormPlugins/SubmitButton'
 
+import { Login } from '../../axios/Login.axios'
+
 const FormLogin = () => {
   const methods = useForm()
 
   const onSubmit = (data) => {
-    console.log(data)
+    Login(data)
   }
 
   return (
@@ -40,7 +42,7 @@ const FormLogin = () => {
             </span>
           </div>
 
-          <button> INGRESAR </button>
+          <SubmitButton content='Ingresar' />
         </form>
         <h3>
           {' '}

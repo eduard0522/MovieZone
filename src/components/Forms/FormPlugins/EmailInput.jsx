@@ -7,7 +7,7 @@ const InputForm = ({ inputName }) => {
   } = useFormContext()
   return (
     <div className='w-full relative flex group '>
-      <label className='absolute -top-1 left-0 right-0 transition-all peer/draft group-has-[:valid]:-top-6 group-has-[:focus]:-top-6'>
+      <label className='absolute -top-1 left-0 right-0 transition-all peer/draft group-has-[:valid]:-top-6 group-has-[:focus]:-top-6 font-semibold'>
         {inputName}
       </label>
       <input
@@ -21,7 +21,7 @@ const InputForm = ({ inputName }) => {
             message: 'Correo inválido'
           }
         })}
-        className='w-full  px-1 border-b-2 border-white text-whithe bg-transparent outline-none absolute top-0 left-0 right-0  peer-hover/draft:border-sky-500 font-bold text-greenP'
+        className='w-full  px-1 border-b-2 border-white text-whithe bg-transparent outline-none absolute top-0 left-0 right-0  peer-hover/draft:border-greenP focus:border-greenP font-bold'
       />
       {
         errors.email && <span className='absolute top-7 text-red-500 text-xs font-semibold'>  {errors.email.message} </span>
