@@ -1,6 +1,6 @@
 import { useFormContext } from 'react-hook-form'
 
-const InputForm = ({ inputName, value }) => {
+const InputText = ({ inputName }) => {
   const {
     register,
     formState: { errors }
@@ -11,24 +11,19 @@ const InputForm = ({ inputName, value }) => {
         {inputName}
       </label>
       <input
-        {...register('email', {
+        {...register('username', {
           required: {
             value: true,
-            message: 'El correo es requerido'
-          },
-          pattern: {
-            value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-            message: 'Correo inválido'
+            message: 'El nombre es requerido'
           }
         })}
         className='w-full  px-1 border-b-2 border-white text-whithe bg-transparent outline-none absolute top-0 left-0 right-0  peer-hover/draft:border-greenP focus:border-greenP font-bold'
-        defaultValue={value}
       />
       {
-        errors.email && <span className='absolute top-7 text-red-500 text-xs font-semibold'>  {errors.email.message} </span>
+        errors.username && <span className='absolute top-7 text-red-500 text-xs font-semibold'>  {errors.username.message} </span>
       }
     </div>
   )
 }
 
-export default InputForm
+export default InputText

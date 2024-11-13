@@ -5,12 +5,16 @@ import Movies from '../pages/Movies.jsx'
 import Index from '../pages/Index.jsx'
 
 import { VideoProvider } from '../components/Contexts/contextVideo.jsx'
+import { FormsProvider } from '../components/Contexts/FormContext'
 
 const Router = () => {
   return (
     <VideoProvider>
       <Routes>
-        <Route path='/auth' element={<Index />} />
+        <Route
+          path='/auth'
+          element={<FormsProvider> <Index /> </FormsProvider>}
+        />
         <Route path='/' element={<Home />} />
         <Route path='/movies' element={<Movies />} />
         <Route path='/series' element={<Series />} />

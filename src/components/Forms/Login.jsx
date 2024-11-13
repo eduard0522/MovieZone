@@ -1,5 +1,7 @@
 import { useForm, FormProvider } from 'react-hook-form'
+import { useContext } from 'react'
 
+import { ContextVideo } from '../Contexts/contextVideo'
 import EmailInput from './FormPlugins/EmailInput'
 import PasswordInput from './FormPlugins/PasswordInput'
 import CloseFormButton from './FormPlugins/CloseFormButton'
@@ -12,9 +14,15 @@ import { Login } from '../../axios/Login.axios'
 
 const FormLogin = () => {
   const methods = useForm()
+  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(ContextVideo)
 
   const onSubmit = (data) => {
     Login(data)
+  }
+
+  const changeStatusForm = () => {
+    setOpenFormLogin(!openFormLogin)
+    setOpenFormRegister(!openFormRegister)
   }
 
   return (
@@ -45,12 +53,10 @@ const FormLogin = () => {
           <SubmitButton content='Ingresar' />
         </form>
         <h3>
-          {' '}
-          No tengo cuenta,{' '}
-          <span className='font-bold underline cursor-pointer hover:text-greenP'>
-            {' '}
-            Registrarme.{' '}
-          </span>{' '}
+          No tengo cuenta,
+          <span className='font-bold underline cursor-pointer hover:text-greenP' onClick={changeStatusForm}>
+            Registrarme.
+          </span>
         </h3>
       </FormContainer>
     </FormProvider>
