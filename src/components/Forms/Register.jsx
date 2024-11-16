@@ -3,8 +3,8 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
 
-import { ContextVideo } from '../Contexts/contextVideo'
 import { contextForms } from '../Contexts/FormContext'
+import { ContextVideo } from '../Contexts/contextVideo'
 import FormContainer from './FormPlugins/FormContainer'
 import FormTitle from './FormPlugins/FormTitle'
 import EmailInput from './FormPlugins/EmailInput'
@@ -15,8 +15,8 @@ import CloseFormButton from './FormPlugins/CloseFormButton'
 import Register from '../../axios/Register'
 
 const RegisterForm = () => {
-  const { setIsAuthenticated, setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(ContextVideo)
-  const {valueInputEmail} = useContext(contextForms)
+  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin, valueInputEmail } = useContext(contextForms)
+  const { setIsAuthenticated } = useContext(ContextVideo)
 
   const navigate = useNavigate()
   const methods = useForm()
@@ -29,15 +29,19 @@ const RegisterForm = () => {
   const onClick = async (data) => {
     try {
       const res = await Register(data)
-      if (res.status === 201) {
-        toast.success(`Hola ${res.data.username}, Gracias por registrarte!!`, {
-          icon: '🎉'
-        })
+      if (res.error) {
+        return toast.error(res.message)
       }
+      setIsAuthenticated(true)
+      toast.success(res.message, {
+        icon: '🎉'
+      })
+      navigate('/')
     } catch (error) {
-      toast.error(error.response?.data.message)
+      return toast.error('Ocurrio un error inesperado.')
     }
   }
+
   return (
     <FormProvider {...methods}>
       <FormContainer>

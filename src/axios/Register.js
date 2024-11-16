@@ -1,12 +1,25 @@
 import Axios from './Axios'
 
 const Register = async (data) => {
-  const res = await Axios.post('/api/register', {
-    username: data.username,
-    email: data.email,
-    password: data.password
+  try {
+    const res = await Axios.post('/api/register', {
+      username: data.username,
+      email: data.email,
+      password: data.password
 
-  })
-  return res
+    })
+    return {
+      status: res.status,
+      message: res.data.message
+    }
+  } catch (error) {
+    if (error.response) {
+      return {
+        error: true,
+        status: error.status,
+        message: error.response.data.message
+      }
+    }
+  }
 }
 export default Register

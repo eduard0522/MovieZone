@@ -1,7 +1,7 @@
 import { useForm, FormProvider } from 'react-hook-form'
 import { useContext } from 'react'
+import { Toaster, toast } from 'sonner'
 
-import { ContextVideo } from '../Contexts/contextVideo'
 import EmailInput from './FormPlugins/EmailInput'
 import PasswordInput from './FormPlugins/PasswordInput'
 import CloseFormButton from './FormPlugins/CloseFormButton'
@@ -11,13 +11,25 @@ import FormTitle from './FormPlugins/FormTitle'
 import SubmitButton from './FormPlugins/SubmitButton'
 
 import { Login } from '../../axios/Login.axios'
-
+import { contextForms } from '../Contexts/FormContext'
+import { ContextVideo } from '../Contexts/contextVideo'
+import { useNavigate } from 'react-router-dom'
 const FormLogin = () => {
   const methods = useForm()
-  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(ContextVideo)
-
-  const onSubmit = (data) => {
-    Login(data)
+  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(contextForms)
+  const { setIsAuthenticated } = useContext(ContextVideo)
+  const navigate = useNavigate()
+  const onSubmit = async (data) => {
+    const res = await Login(data)
+    if (res.error) {
+      return toast.error(res.message)
+    }
+    toast.success(`Bienvenido, ${res.message}`)
+    setIsAuthenticated(true)
+    setOpenFormLogin(false)
+    setTimeout(() => {
+      navigate('/')
+    }, 1000)
   }
 
   const changeStatusForm = () => {
@@ -59,6 +71,7 @@ const FormLogin = () => {
           </span>
         </h3>
       </FormContainer>
+      <Toaster />
     </FormProvider>
   )
 }

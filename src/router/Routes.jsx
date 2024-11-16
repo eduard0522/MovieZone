@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
+import { ProtectedRoutes } from '../components/ProtectedRoutes.jsx/ProtectedRoutes.jsx'
+
 import Home from '../pages/Home.jsx'
 import Series from '../pages/Series.jsx'
 import Movies from '../pages/Movies.jsx'
@@ -15,9 +17,11 @@ const Router = () => {
           path='/auth'
           element={<FormsProvider> <Index /> </FormsProvider>}
         />
-        <Route path='/' element={<Home />} />
-        <Route path='/movies' element={<Movies />} />
-        <Route path='/series' element={<Series />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/' element={<Home />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/series' element={<Series />} />
+        </Route>
       </Routes>
     </VideoProvider>
   )

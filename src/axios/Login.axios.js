@@ -1,16 +1,23 @@
 import Axios from './Axios'
 
 export const Login = async (data) => {
-  const { username, password } = data
+  const { email, password } = data
+  console.log(email, password)
   try {
     const response = await Axios.post('/api/login', {
-      email: username,
+      email,
       password
     })
-    return response
+    console.log(response.data)
+    return {
+      status: response.status,
+      message: response.data.username
+    }
   } catch (error) {
-    if (error.status === 404) {
-      console.log(error.response?.data.message)
+    return {
+      error: true,
+      status: error.response.status,
+      message: error.response.data.message
     }
   }
 }

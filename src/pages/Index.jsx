@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { ContextVideo } from '../components/Contexts/contextVideo'
 import { contextForms } from '../components/Contexts/FormContext'
 
 import Nav from '../components/Nav/Nav'
@@ -13,10 +12,7 @@ const Index = () => {
     openFormLogin,
     setOpenFormLogin,
     openFormRegister,
-    setOpenFormRegister
-  } = useContext(ContextVideo)
-
-  const {
+    setOpenFormRegister,
     setValueInputEmail
   } = useContext(contextForms)
 
@@ -38,7 +34,7 @@ const Index = () => {
             </h2>
             <h2 className='text-4xl w-[500px] font-bold'>
 
-              Solo un clic te separa de horas de diversión. Inicia sesión y haz
+              Solo un click te separa de horas de diversión. Inicia sesión y haz
               de cada momento un espectáculo.
             </h2>
             <h3 className='text-xl'>

@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { ContextVideo } from '../../Contexts/contextVideo.jsx'
+import { contextForms } from '../../Contexts/FormContext.jsx'
 
 import { IoCloseCircle } from 'react-icons/io5'
 
 const CloseFormButton = ({ name }) => {
-  const { openFormLogin, setOpenFormLogin, openFormRegister, setOpenFormRegister } = useContext(ContextVideo)
+  const { openFormLogin, setOpenFormLogin, openFormRegister, setOpenFormRegister } = useContext(contextForms)
 
   const changeFormStatus = () => {
     if (name === 'register') {

@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ContextVideo } from '../Contexts/contextVideo'
+
 import { TbMovie } from 'react-icons/tb'
 import { BiCameraMovie } from 'react-icons/bi'
 import { GrHomeRounded } from 'react-icons/gr'
@@ -8,10 +11,9 @@ import Logo from '../../assets/logo.png'
 import ButtonCategory from './ButtonCategory'
 import ButtonLogin from '../Buttons/Login'
 import avatarPrueba from '../../assets/avatar-prueba.jpg'
-import { useState } from 'react'
 
 const Nav = () => {
-  const [auth, setAuth] = useState(false)
+  const { isAuthenticated } = useContext(ContextVideo)
 
   return (
     <section className='flex justify-between w-full items-center'>
@@ -25,16 +27,14 @@ const Nav = () => {
           <NavLink
             to='/'
             className={({ isActive }) =>
-              isActive ? 'text-white' : 'text-blackP-100'
-            }
+              isActive ? 'text-white' : 'text-blackP-100'}
           >
             <ButtonCategory category='Home' icon={<GrHomeRounded />} />
           </NavLink>
           <NavLink
             to='/movies'
             className={({ isActive }) =>
-              isActive ? 'text-white' : 'text-blackP-100'
-            }
+              isActive ? 'text-white' : 'text-blackP-100'}
           >
             <ButtonCategory category='Movies' icon={<TbMovie />} />
           </NavLink>
@@ -42,8 +42,7 @@ const Nav = () => {
           <NavLink
             to='/series'
             className={({ isActive }) =>
-              isActive ? 'text-white' : 'text-blackP-100'
-            }
+              isActive ? 'text-white' : 'text-blackP-100'}
           >
             <ButtonCategory category='Series' icon={<BiCameraMovie />} />
           </NavLink>
@@ -57,15 +56,7 @@ const Nav = () => {
         </div>
       </div>
       <div className='rounded-full'>
-        {auth ? (
-          <img
-            src={avatarPrueba}
-            alt='Avatar del perfil'
-            className='rounded-full'
-          />
-        ) : (
-          <ButtonLogin />
-        )}
+        {isAuthenticated ? (<img src={avatarPrueba} alt='Avatar del perfil' className='w-12 h-12 rounded-full' />) : (<ButtonLogin />)}
       </div>
     </section>
   )

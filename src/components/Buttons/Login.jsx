@@ -1,8 +1,7 @@
 import { useContext } from 'react'
-import { ContextVideo } from '../Contexts/contextVideo'
-
+import { contextForms } from '../Contexts/FormContext'
 const ButtonLogin = () => {
-  const { setOpenFormLogin, openFormLogin } = useContext(ContextVideo)
+  const { setOpenFormLogin, openFormLogin } = useContext(contextForms)
   return (
     <div
       className=' bg-redP py-2 px-6 rounded-sm cursor-pointer hover:bg-greenP'
@@ -12,5 +11,4 @@ const ButtonLogin = () => {
     </div>
   )
 }
-
 export default ButtonLogin
