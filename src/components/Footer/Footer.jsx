@@ -2,7 +2,7 @@ import Logo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer className='mt-10 border-t-4 border-gray-700'>
+    <footer className='mt-10 border-t-4 border-gray-700 px-8 py-4'>
       <div className='container'>
         <ul className='flex justify-center items-center gap-10 text-lg font-medium'>
           <li> FeedBack </li>

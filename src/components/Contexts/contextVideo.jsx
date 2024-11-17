@@ -8,7 +8,6 @@ export const VideoProvider = ({ children }) => {
   const [movieList, setMovieList] = useState([])
   const [loadingDates, setLoadingDates] = useState(true)
   const [openModalMovie, setOpenModalMovie] = useState(false)
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
     setMovieList(moviesDates)
@@ -32,9 +31,7 @@ export const VideoProvider = ({ children }) => {
         moviesDates,
         loadingDates,
         changeOpenModal,
-        openModalMovie,
-        isAuthenticated,
-        setIsAuthenticated
+        openModalMovie
       }}
     >
       {children}

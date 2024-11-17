@@ -9,6 +9,7 @@ export default {
       colors: {
         blackP: {
           DEFAULT: '#0A070B',
+          900: '#0b080cfa',
           400: '#15161C',
           300: '#363536',
           200: '#4F4E50',
@@ -17,6 +18,7 @@ export default {
         },
         whiteP: {
           DEFAULT: '#F7F7F7',
+          900: '#F6F6F6',
           400: '#F5F5F5',
           300: '#E5E5E5',
           200: '#D9D9D9',

@@ -1,6 +1,5 @@
 import Nav from '../components/Nav/Nav'
 import FilterByGenres from '../components/Sections/FilteredByGenres'
-import Footer from '../components/Footer/Footer'
 
 const Movies = () => {
   return (
@@ -9,7 +8,6 @@ const Movies = () => {
       <main>
         <FilterByGenres />
       </main>
-      <Footer />
     </>
   )
 }

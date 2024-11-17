@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ContextVideo } from '../Contexts/contextVideo'
+import { contextForms } from '../Contexts/FormContext'
 
 import { TbMovie } from 'react-icons/tb'
 import { BiCameraMovie } from 'react-icons/bi'
@@ -10,13 +10,13 @@ import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../assets/logo.png'
 import ButtonCategory from './ButtonCategory'
 import ButtonLogin from '../Buttons/Login'
-import avatarPrueba from '../../assets/avatar-prueba.jpg'
+import { UserPanel } from './UserPanel'
 
 const Nav = () => {
-  const { isAuthenticated } = useContext(ContextVideo)
+  const { isAuthenticated } = useContext(contextForms)
 
   return (
-    <section className='flex justify-between w-full items-center'>
+    <section className='px-8 py-4 flex justify-between w-full items-center'>
       <div className='flex gap-8 items-center w-4/5 justify-start'>
         <Link to='/'>
           <div className='w-48'>
@@ -56,7 +56,7 @@ const Nav = () => {
         </div>
       </div>
       <div className='rounded-full'>
-        {isAuthenticated ? (<img src={avatarPrueba} alt='Avatar del perfil' className='w-12 h-12 rounded-full' />) : (<ButtonLogin />)}
+        {isAuthenticated ? <UserPanel /> : (<ButtonLogin />)}
       </div>
     </section>
   )

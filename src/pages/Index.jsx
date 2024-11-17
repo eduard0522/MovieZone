@@ -1,8 +1,6 @@
 import { useContext } from 'react'
 import { contextForms } from '../components/Contexts/FormContext'
 
-import Nav from '../components/Nav/Nav'
-import Footer from '../components/Footer/Footer'
 import bgImage from '../assets/bg_Index.jpg'
 import FormLogin from '../components/Forms/Login'
 import RegisterForm from '../components/Forms/Register'
@@ -21,7 +19,6 @@ const Index = () => {
   }
   return (
     <>
-      <Nav />
       <div
         className='w-[100%] h-[90vh] bg-no-repeat bg-cover relative rounded-md overflow-hidden'
         style={{ backgroundImage: `url(${bgImage})` }}
@@ -68,7 +65,6 @@ const Index = () => {
           {openFormRegister && <RegisterForm />}
         </div>
       </div>
-      <Footer />
     </>
   )
 }

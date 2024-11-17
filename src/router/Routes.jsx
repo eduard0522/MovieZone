@@ -7,7 +7,6 @@ import Movies from '../pages/Movies.jsx'
 import Index from '../pages/Index.jsx'
 
 import { VideoProvider } from '../components/Contexts/contextVideo.jsx'
-import { FormsProvider } from '../components/Contexts/FormContext'
 
 const Router = () => {
   return (
@@ -15,7 +14,7 @@ const Router = () => {
       <Routes>
         <Route
           path='/auth'
-          element={<FormsProvider> <Index /> </FormsProvider>}
+          element={<Index />}
         />
         <Route element={<ProtectedRoutes />}>
           <Route path='/' element={<Home />} />

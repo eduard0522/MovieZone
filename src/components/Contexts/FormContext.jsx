@@ -6,6 +6,7 @@ export const FormsProvider = ({ children }) => {
   const [valueInputEmail, setValueInputEmail] = useState('')
   const [openFormLogin, setOpenFormLogin] = useState(false)
   const [openFormRegister, setOpenFormRegister] = useState(false)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   return (
     <contextForms.Provider
@@ -15,7 +16,9 @@ export const FormsProvider = ({ children }) => {
         openFormLogin,
         setOpenFormLogin,
         openFormRegister,
-        setOpenFormRegister
+        setOpenFormRegister,
+        isAuthenticated,
+        setIsAuthenticated
       }}
     >
       {children}

@@ -6,7 +6,6 @@ import MostPopular from '../components/Sections/MostPopular'
 import { useContext } from 'react'
 import { ContextVideo } from '../components/Contexts/contextVideo'
 import MostRecents from '../components/Sections/MostRecents'
-import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   const { movieSelected, loadingDates } =
@@ -29,8 +28,6 @@ const Home = () => {
       <section>
         <VideoPlayer />
       </section>
-
-      <Footer />
     </>
   )
 }
