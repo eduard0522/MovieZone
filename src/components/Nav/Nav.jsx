@@ -1,12 +1,13 @@
 import { useContext } from 'react'
-import { contextForms } from '../Contexts/FormContext'
+import { NavLink } from 'react-router-dom'
 
 import { TbMovie } from 'react-icons/tb'
 import { BiCameraMovie } from 'react-icons/bi'
 import { GrHomeRounded } from 'react-icons/gr'
 import { IoSearch } from 'react-icons/io5'
-import { NavLink, Link } from 'react-router-dom'
 
+import { contextForms } from '../Contexts/FormContext'
+import { GeneralContext } from '../Contexts/GeneralContext'
 import Logo from '../../assets/logo.png'
 import ButtonCategory from './ButtonCategory'
 import ButtonLogin from '../Buttons/Login'
@@ -14,15 +15,16 @@ import { UserPanel } from './UserPanel'
 
 const Nav = () => {
   const { isAuthenticated } = useContext(contextForms)
-
+  const { openSideNav, setOpenSideNav } = useContext(GeneralContext)
+  const changeStateSideNav = () => {
+    setOpenSideNav(!openSideNav)
+  }
   return (
-    <section className='px-8 py-4 flex justify-between w-full items-center'>
+    <section className='px-8 py-4 flex justify-between w-full items-center z-20'>
       <div className='flex gap-8 items-center w-4/5 justify-start'>
-        <Link to='/'>
-          <div className='w-48'>
-            <img src={Logo} alt='Logo MovieZone' />
-          </div>
-        </Link>
+        <div className='w-48 cursor-pointer' onClick={changeStateSideNav}>
+          <img src={Logo} alt='Logo MovieZone' />
+        </div>
         <nav className='flex gap-8 text-blackP-100'>
           <NavLink
             to='/'
