@@ -15,7 +15,7 @@ import { ListItem } from './ListItem'
 export const SideNav = () => {
   const { openSideNav } = useContext(GeneralContext)
   return (
-    <section className={`w-1/6 absolute  bg-blackP flex flex-col justify-between items-left  text-blackP-100 z-10 transform transition-transform duration-700 ease-in-out ${openSideNav ? 'top-0 left-0 bottom-0 translate-x-0' : 'top-0 left-0 bottom-0 -translate-x-[200%]  '} `}>
+    <section className={`w-1/6 min-h-[100vh] max-h-[100vh] absolute  bg-blackP flex flex-col justify-between items-left  text-blackP-100 z-10 transform transition-transform duration-700 ease-in-out ${openSideNav ? 'top-0 left-0 bottom-0 translate-x-0' : 'top-0 left-0 bottom-0 -translate-x-[200%]  '} `}>
       <UserPanel />
       <nav className='flex flex-col justify-between h-3/5 list-none'>
         <ListItem content='Inicio' Icon={GrHomeRounded} />

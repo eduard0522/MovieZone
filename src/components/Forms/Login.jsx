@@ -12,12 +12,10 @@ import SubmitButton from './FormPlugins/SubmitButton'
 
 import { Login } from '../../axios/Login.axios'
 import { contextForms } from '../Contexts/FormContext'
-import { ContextVideo } from '../Contexts/contextVideo'
 import { useNavigate } from 'react-router-dom'
 const FormLogin = () => {
   const methods = useForm()
-  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(contextForms)
-  const { setIsAuthenticated } = useContext(ContextVideo)
+  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin, setIsAuthenticated } = useContext(contextForms)
   const navigate = useNavigate()
   const onSubmit = async (data) => {
     const res = await Login(data)

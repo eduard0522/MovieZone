@@ -1,4 +1,3 @@
-import Nav from '../components/Nav/Nav'
 import MovieSelected from '../components/MovieSelected/MovieSelected'
 import VideoPlayer from '../components/VideoPlayer/VideoPlayer'
 import MostPopular from '../components/Sections/MostPopular'
@@ -13,7 +12,6 @@ const Home = () => {
   return (
     <>
       <section>
-        <Nav />
         {loadingDates
           ? (
             <div>Loading...</div>

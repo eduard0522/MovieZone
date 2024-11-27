@@ -1,10 +1,9 @@
 import { useContext } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
-import { ContextVideo } from '../Contexts/contextVideo.jsx'
+import { GeneralContext } from '../Contexts/GeneralContext'
 
 export const ProtectedRoutes = ({ children }) => {
-  const { isAuthenticated } = useContext(ContextVideo)
-
+  const { isAuthenticated } = useContext(GeneralContext)
   if (!isAuthenticated) {
     return <Navigate to='/auth' />
   }

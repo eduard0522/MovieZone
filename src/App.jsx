@@ -11,14 +11,16 @@ function App () {
   return (
     <GeneralContextProvider>
       <FormsProvider>
-        <Nav />
-        <main className='px-8 py-4'>
-          <section className='relative'>
-            <SideNav />
-            <Router />
-          </section>
-        </main>
-        <Footer />
+        <div className='flex min-h-[100vh] flex-col justify-between'>
+          <Nav />
+          <main className='px-8 py-4'>
+            <section className='relative'>
+              <SideNav />
+              <Router />
+            </section>
+          </main>
+          <Footer />
+        </div>
       </FormsProvider>
     </GeneralContextProvider>
   )
