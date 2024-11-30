@@ -35,6 +35,18 @@ export default {
       fontFamily: {
         Roboto: ['Roboto', 'sans-serif'],
         Poppins: ['Poppins', 'sans-serif']
+      },
+      transitionProperty: {
+        size: 'width, height'
+      },
+      keyframes: {
+        resize: {
+          '0%': { width: '100%' },
+          '100%': { width: '83.33%' }
+        }
+      },
+      animation: {
+        resize: 'resize 0.3s ease-in-out'
       }
     }
   },

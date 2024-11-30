@@ -14,13 +14,20 @@ export const GeneralContextProvider = ({ children }) => {
       return setIsAuthenticated(true)
     }
   }, [])
+
+  const logout = () => {
+    Cookies.remove('acces_token')
+    setIsAuthenticated(false)
+    return 'Cesión cerrada'
+  }
   return (
     <GeneralContext.Provider
       value={{
         openSideNav,
         setOpenSideNav,
         setIsAuthenticated,
-        isAuthenticated
+        isAuthenticated,
+        logout
       }}
     >
       {children}

@@ -1,5 +1,7 @@
-import { useForm, FormProvider } from 'react-hook-form'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useForm, FormProvider } from 'react-hook-form'
+
 import { Toaster, toast } from 'sonner'
 
 import EmailInput from './FormPlugins/EmailInput'
@@ -9,13 +11,14 @@ import CheckBox from './FormPlugins/CheckBox'
 import FormContainer from './FormPlugins/FormContainer'
 import FormTitle from './FormPlugins/FormTitle'
 import SubmitButton from './FormPlugins/SubmitButton'
-
 import { Login } from '../../axios/Login.axios'
 import { contextForms } from '../Contexts/FormContext'
-import { useNavigate } from 'react-router-dom'
+import { GeneralContext } from '../Contexts/GeneralContext'
+
 const FormLogin = () => {
   const methods = useForm()
-  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin, setIsAuthenticated } = useContext(contextForms)
+  const { setOpenFormRegister, openFormLogin, openFormRegister, setOpenFormLogin } = useContext(contextForms)
+  const { setIsAuthenticated } = useContext(GeneralContext)
   const navigate = useNavigate()
   const onSubmit = async (data) => {
     const res = await Login(data)

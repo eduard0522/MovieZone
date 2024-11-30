@@ -12,20 +12,20 @@ import { HiMiniArrowLeftStartOnRectangle } from 'react-icons/hi2'
 import { UserPanel } from './UserPanel'
 import { ListItem } from './ListItem'
 
-export const SideNav = () => {
+export const SideNav = ({ setModal }) => {
   const { openSideNav } = useContext(GeneralContext)
   return (
-    <section className={`w-1/6 min-h-[100vh] max-h-[100vh] absolute  bg-blackP flex flex-col justify-between items-left  text-blackP-100 z-10 transform transition-transform duration-700 ease-in-out ${openSideNav ? 'top-0 left-0 bottom-0 translate-x-0' : 'top-0 left-0 bottom-0 -translate-x-[200%]  '} `}>
+    <section className={`min-h-[calcl(100vh-80px)] max-h-[calcl(100vh-80px)] fixed pb-8 bg-blackP flex flex-col justify-between items-left  text-blackP-100 z-10 transform transition-transform duration-700 ease-in-out ${openSideNav ? 'top-[80px] left-8 bottom-0 translate-x-0' : 'top-[80px] left-8 bottom-0 -translate-x-[200%]'}`}>
       <UserPanel />
-      <nav className='flex flex-col justify-between h-3/5 list-none'>
-        <ListItem content='Inicio' Icon={GrHomeRounded} />
-        <ListItem content='Películas' Icon={TbMovie} />
-        <ListItem content='Series' Icon={BiCameraMovie} />
-        <ListItem content='Catergorías ' Icon={BiCategoryAlt} />
-        <ListItem content='Recientes ' Icon={FaClockRotateLeft} />
-        <ListItem content='Aleatorio' Icon={PiArrowsClockwiseBold} />
+      <nav className='flex flex-col justify-between h-3/5 list-none '>
+        <ListItem content='Inicio' Icon={GrHomeRounded} link='/' />
+        <ListItem content='Películas' Icon={TbMovie} link='/movies' />
+        <ListItem content='Series' Icon={BiCameraMovie} link='/series' />
+        <ListItem content='Catergorías ' Icon={BiCategoryAlt} link='/' />
+        <ListItem content='Recientes ' Icon={FaClockRotateLeft} link='/' />
+        <ListItem content='Aleatorio' Icon={PiArrowsClockwiseBold} link='/' />
       </nav>
-      <div className='px-4'>
+      <div>
         <div className='flex gap-4 group mb-4 hover:text-white cursor-pointer'>
           <RiUserSettingsLine className='text-2xl group-hover:border-b-2 border-greenP pb-1 ' />
           <h2 className='text-base font-semibold'>  Perfil </h2>
@@ -33,7 +33,7 @@ export const SideNav = () => {
 
         <div className='flex gap-4 group hover:text-white cursor-pointer'>
           <HiMiniArrowLeftStartOnRectangle className='text-2xl group-hover:border-b-2 border-redP pb-1 ' />
-          <button className='text-base font-semibold'> Cerrar Sesión</button>
+          <button className='text-base font-semibold' onClick={setModal}> Cerrar Sesión</button>
         </div>
       </div>
     </section>

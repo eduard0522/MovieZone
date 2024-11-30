@@ -17,7 +17,7 @@ const Nav = () => {
     setOpenSideNav(!openSideNav)
   }
   return (
-    <section className='px-8 py-4 flex justify-between w-full items-center z-20'>
+    <section className='px-8 py-4 flex justify-between w-full items-center z-20 h-[80px] fixed top-0 left-0 right-0 bg-blackP'>
       <div className={`${isAuthenticated ? ' xl:w-full justify-between' : 'xl:w-5/6 2xl:w-4/5'} flex gap-8 items-center`}>
         <div className='flex justify-start items-center gap-8'>
           <div className='w-48 cursor-pointer' onClick={changeStateSideNav}>
