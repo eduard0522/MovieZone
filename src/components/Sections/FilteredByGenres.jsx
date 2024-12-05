@@ -31,7 +31,7 @@ const FilterByGenres = () => {
     <>
       {Object.keys(genres).map((genre) => {
         return (
-          <section key={genre}>
+          <section key={genre} className='my-6'>
             <Header title={genre} />
             <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
               {genres[genre].map((movie) => (

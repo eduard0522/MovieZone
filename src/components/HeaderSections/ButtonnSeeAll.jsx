@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const ButtonSeeAll = () => {
   return (
     <Link to='/movies'>
-      <button type='button' className='flex items-center justify-center gap-2 font-medium text-xl hover:text-redP'>
-        See All  <FaArrowRight className='text-redP transition-all ' />
+      <button type='button' className='flex items-center group justify-center gap-2 font-medium text-lg '>
+        See All  <FaArrowRight className='text-redP transition-all group-hover:text-greenP ' />
       </button>
     </Link>
   )

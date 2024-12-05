@@ -43,10 +43,15 @@ export default {
         resize: {
           '0%': { width: '100%' },
           '100%': { width: '83.33%' }
+        },
+        resizeButton: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.3)' }
         }
       },
       animation: {
-        resize: 'resize 0.3s ease-in-out'
+        resize: 'resize 0.3s ease-in-out',
+        resizeButton: 'resizeButton 0.4s ease-in-out forwards'
       }
     }
   },

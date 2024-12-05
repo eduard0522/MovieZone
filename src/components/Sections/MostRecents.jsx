@@ -12,8 +12,8 @@ const MostRecents = () => {
   }
 
   return (
-    <section className='my-4'>
-      <Header title=' Most Recents ' />
+    <section className=''>
+      <Header title='Most Recents' />
 
       <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
         {movieList.map((movie) => {

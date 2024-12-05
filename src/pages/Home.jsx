@@ -1,4 +1,4 @@
-import MovieSelected from '../components/MovieSelected/MovieSelected'
+import SlideRecomendations from '../components/RecomendationsSlide/MovieSlide'
 import VideoPlayer from '../components/VideoPlayer/VideoPlayer'
 import MostPopular from '../components/Sections/MostPopular'
 
@@ -17,7 +17,7 @@ const Home = () => {
             <div>Loading...</div>
             )
           : (
-            <MovieSelected movie={movieSelected} />
+            <SlideRecomendations movie={movieSelected} />
             )}
         <MostPopular />
         <MostRecents />

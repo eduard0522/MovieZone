@@ -12,7 +12,9 @@
       "description": "Spider-man No Way Home is a movie about a superhero who must navigate multiple universes.",
       "poster": "https://www.fiz-x.com/wp-content/uploads/2021/11/Marvels-SPIDERMAN-NO-WAY-HOME-New-Poster.jpeg",
       "banner" : "https://www.tododigital.com/__export/1670888374852/sites/elimparcial/img/2022/12/12/spider-man-no-way-home-fecha-de-reestreno-y-poster-en-mexico-2-1280x720.jpg_554688468.jpg",
-      "codeVideo" : "01"
+      "codeVideo" : "01",
+      "duration": [2,15],
+      "like": true
     },
 
     {
@@ -28,7 +30,9 @@
       "description": "The Shawshank Redemption is a movie about hope and redemption.",
       "poster": "https://originalvintagemovieposters.com/wp-content/uploads/2015/05/Shawshank-Redemption-3205-711x1024.jpg",
       "banner" : "https://image.tmdb.org/t/p/original/1bGBTCPC1lcvrNTluh1bgr1dd2F.jpg",
-      "codeVideo" : "02"
+      "codeVideo" : "02",
+      "duration": [2,15],
+      "like": true
       },
       {
       "title": "Ferdinand",
@@ -43,7 +47,9 @@
       "description": "Ferdinand is a movie about a bull with a big heart.",
       "poster": "http://es.web.img3.acsta.net/pictures/17/11/27/13/44/5907148.jpg",
       "banner" : "https://townsquare.media/site/442/files/2017/09/Ferdinand-movie-john-cena-manning.jpg",
-      "codeVideo" : "03"
+      "codeVideo" : "03",
+      "duration": [2,15],
+      "like": false
       },
       {
         "title": "Guardianes de la Galaxía  2",
@@ -58,7 +64,9 @@
         "description": "Guardianes de la Galaxía 2 es una película de acción que sigue a un grupo de héroes que deben proteger el universo." ,
         "poster": "https://im.ziffdavisinternational.com/ign_es/screenshot/default/guardaines_jhsk.jpg",
         "banner" : "https://i1.wp.com/cinefilosfrustrados.com/wp-content/uploads/2017/04/2560_3000.png?fit=1300%2C740&ssl=1",
-        "codeVideo" : "04"
+        "codeVideo" : "04",
+        "duration": [2,15],
+        "like": true
         },
         {
           "title": "Bolt",
@@ -73,7 +81,9 @@
           "description": "Bolt es una película de animación que sigue a un perro que cree que tiene poderes superiores.",
           "poster": "https://www.themoviedb.org/t/p/original/v5aC4nrzXFGJDWY4JO1eengXzqk.jpg",
           "banner" : "http://rotoscopers.com/wp-content/uploads/2015/02/Bolt_Poster.jpg",
-          "codeVideo" : "05"
+          "codeVideo" : "05",
+          "duration": [2,15],
+          "like": false
         },
         {
           "title": "Deadpool 2",
@@ -88,7 +98,9 @@
           "description": "Deadpool 2 es una película de acción que sigue a un superhero que debe proteger a un niño con poderes especiales.",
           "poster": "https://i.pinimg.com/736x/2a/83/7b/2a837b32e324ce1c90e9c7142984e2b7.jpg",
           "banner" : "https://www.mubis.es/media/users/3724/203627/accion-cine-portada-y-posters-mayo-2018-l_cover.jpg",
-          "codeVideo" : "06"
+          "codeVideo" : "06",
+          "duration": [2,15],
+          "like": true
         },
         {
           "title" : "Jhon Wick 3",
@@ -103,6 +115,8 @@
           "description" : "Jhon Wick 3 es una película de acción que sigue a un exagente que debe proteger a su hijo.",
           "poster" : "http://es.web.img2.acsta.net/pictures/19/05/27/12/05/3089180.jpg",
           "banner" : "https://wallpapercave.com/wp/wp1867297.jpg",
-          "codeVideo" : "07"
+          "codeVideo" : "07",
+          "duration": [2,15],
+          "like": false
         }
 ]

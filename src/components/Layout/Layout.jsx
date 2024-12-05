@@ -15,7 +15,7 @@ export const LayoutPage = () => {
     setOpenModalLogout(!openModalLogout)
   }
   return (
-    <section className='flex flex-col min-h-[100vh]  justify-between'>
+    <section className='flex flex-col min-h-[100vh]  justify-between font-Poppins'>
       <Nav />
       <main className='flex flex-1 px-8 mt-[80px]'>
         <div className={`bg-blackP z-10 transition-[width] ease-in-out duration-600 ${openSideNav ? 'w-1/6' : 'w-0'} overflow-hidden animate-resize`}>
