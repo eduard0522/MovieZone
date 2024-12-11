@@ -53,6 +53,18 @@ export default {
       animation: {
         resize: 'resize 0.3s ease-in-out',
         resizeButton: 'resizeButton 0.4s ease-in-out forwards'
+      },
+      screens: {
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        '3xl': '1720px',
+        '4xl': '1920px',
+        '5xl': '2048px',
+        '6xl': '2176px',
+        '7xl': '2304px'
       }
     }
   },

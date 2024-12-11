@@ -29,14 +29,14 @@ const Nav = () => {
               className={({ isActive }) =>
                 isActive ? 'text-white' : 'text-blackP-100'}
             >
-              <ButtonCategory category='Home' icon={<GrHomeRounded />} />
+              <ButtonCategory category='Inicio' icon={<GrHomeRounded />} />
             </NavLink>
             <NavLink
               to='/movies'
               className={({ isActive }) =>
                 isActive ? 'text-white' : 'text-blackP-100'}
             >
-              <ButtonCategory category='Movies' icon={<TbMovie />} />
+              <ButtonCategory category='Películas' icon={<TbMovie />} />
             </NavLink>
 
             <NavLink

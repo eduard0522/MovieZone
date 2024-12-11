@@ -6,9 +6,9 @@ import Movie from '../Movie/CardMovie'
 export const RecomendedMovies = () => {
   const { movieList } = useContext(ContextVideo)
   return (
-    <div className='w-2/6 max-h-[80vh] overflow-hidden'>
-      <h2 className='pb-8 font-bold text-lg'> Recomendadas para tí</h2>
-      <div className='flex flex-wrap gap-4 justify-start'>
+    <div className='col-span-4 overflow-auto max-h-[90vh'>
+      <h2 className='pb-2 md:pb-3 2xl:pb-4 3xl:pb-5  font-bold text-lg md:text-2xl'> Recomendadas para tí</h2>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 auto-rows-fr gap-4'>
         {movieList.map((movie) => <Movie key={movie.title} movie={movie} />)}
       </div>
     </div>

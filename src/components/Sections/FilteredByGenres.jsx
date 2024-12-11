@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { ContextVideo } from '../Contexts/contextVideo'
 
-import Header from '../HeaderSections/Header'
+import ContainerSections from './Plugins/ContainerSections'
+
 import Movie from '../Movie/CardMovie'
 
 const FilterByGenres = () => {
@@ -31,14 +32,11 @@ const FilterByGenres = () => {
     <>
       {Object.keys(genres).map((genre) => {
         return (
-          <section key={genre} className='my-6'>
-            <Header title={genre} />
-            <div className='flex gap-4 max-w-[100vw] overflow-hidden'>
-              {genres[genre].map((movie) => (
-                <Movie key={movie.title} movie={movie} />
-              ))}
-            </div>
-          </section>
+          <ContainerSections key={genre} title={genre}>
+            {genres[genre].map((movie) => (
+              <Movie key={movie.title} movie={movie} />
+            ))}
+          </ContainerSections>
         )
       })}
     </>
